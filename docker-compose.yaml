@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  spark:
+    build: .
+    container_name: spark-gcs
+    ports:
+      - "8080:8080"    # Spark UI
+      - "4040:4040"    # Spark Application UI
+    volumes:
+      - ./app:/app
+      - ./jars:/opt/spark/jars
